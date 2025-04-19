@@ -14,7 +14,6 @@ struct CFPickerView: View {
     var body: some View {
         HStack {
             ForEach(Array(titles.enumerated()), id: \.offset) { idx, title in
-                Spacer()
                 Button(action: {
                     withAnimation {
                         selection = idx
@@ -26,13 +25,11 @@ struct CFPickerView: View {
                         .background(idx == selection ? .red.opacity(0.4) : .clear)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                 }
-                
-                Spacer()
             }
         }
         .padding(10)
         .background(.orange.opacity(0.5))
-        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .clipShape(RoundedRectangle(cornerRadius: 40))
         .font(CFFont.bold(16))
         .frame(width: 250)
     }
