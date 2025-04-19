@@ -6,17 +6,43 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E8F00C0B2DB42BB2007BDCD1 /* CampfireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F00C082DB42BB2007BDCD1 /* CampfireApp.swift */; };
+		E8F00C0C2DB42BB2007BDCD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F00C092DB42BB2007BDCD1 /* ContentView.swift */; };
+		E8F00C0D2DB42BB2007BDCD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8F00C072DB42BB2007BDCD1 /* Assets.xcassets */; };
+		E8F00C142DB42D5E007BDCD1 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8F00C122DB42D5E007BDCD1 /* OFL.txt */; };
+		E8F00C152DB42D5E007BDCD1 /* Arvo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8F00C0E2DB42D5E007BDCD1 /* Arvo-Bold.ttf */; };
+		E8F00C162DB42D5E007BDCD1 /* Arvo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8F00C112DB42D5E007BDCD1 /* Arvo-Regular.ttf */; };
+		E8F00C172DB42D5E007BDCD1 /* Arvo-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8F00C0F2DB42D5E007BDCD1 /* Arvo-BoldItalic.ttf */; };
+		E8F00C182DB42D5E007BDCD1 /* Arvo-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8F00C102DB42D5E007BDCD1 /* Arvo-Italic.ttf */; };
+		E8F00C2D2DB431AB007BDCD1 /* CFFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F00C2C2DB431AB007BDCD1 /* CFFont.swift */; };
+		E8F00C2F2DB43DAC007BDCD1 /* DepthButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F00C2E2DB43DAC007BDCD1 /* DepthButtonStyle.swift */; };
+		E8F00C332DB43F4F007BDCD1 /* CFActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F00C322DB43F4F007BDCD1 /* CFActionButton.swift */; };
+		E8F00C392DB441A6007BDCD1 /* HeaderTitleTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F00C372DB441A6007BDCD1 /* HeaderTitleTextFieldView.swift */; };
+		E8F00C3B2DB441FE007BDCD1 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F00C3A2DB441FE007BDCD1 /* OnboardingView.swift */; };
+		E8F00C3D2DB447C0007BDCD1 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F00C3C2DB447C0007BDCD1 /* View+Ext.swift */; };
+		E8F00C3F2DB44F05007BDCD1 /* CFPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F00C3E2DB44F05007BDCD1 /* CFPickerView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		E8F00BF92DB42B7A007BDCD1 /* Campfire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Campfire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8F00C072DB42BB2007BDCD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8F00C082DB42BB2007BDCD1 /* CampfireApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampfireApp.swift; sourceTree = "<group>"; };
+		E8F00C092DB42BB2007BDCD1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E8F00C0E2DB42D5E007BDCD1 /* Arvo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arvo-Bold.ttf"; sourceTree = "<group>"; };
+		E8F00C0F2DB42D5E007BDCD1 /* Arvo-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arvo-BoldItalic.ttf"; sourceTree = "<group>"; };
+		E8F00C102DB42D5E007BDCD1 /* Arvo-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arvo-Italic.ttf"; sourceTree = "<group>"; };
+		E8F00C112DB42D5E007BDCD1 /* Arvo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arvo-Regular.ttf"; sourceTree = "<group>"; };
+		E8F00C122DB42D5E007BDCD1 /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		E8F00C1B2DB42E1C007BDCD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8F00C2C2DB431AB007BDCD1 /* CFFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFFont.swift; sourceTree = "<group>"; };
+		E8F00C2E2DB43DAC007BDCD1 /* DepthButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthButtonStyle.swift; sourceTree = "<group>"; };
+		E8F00C322DB43F4F007BDCD1 /* CFActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFActionButton.swift; sourceTree = "<group>"; };
+		E8F00C372DB441A6007BDCD1 /* HeaderTitleTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitleTextFieldView.swift; sourceTree = "<group>"; };
+		E8F00C3A2DB441FE007BDCD1 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		E8F00C3C2DB447C0007BDCD1 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		E8F00C3E2DB44F05007BDCD1 /* CFPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		E8F00BFB2DB42B7A007BDCD1 /* Campfire */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Campfire;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E8F00BF62DB42B7A007BDCD1 /* Frameworks */ = {
@@ -32,7 +58,7 @@
 		E8F00BF02DB42B7A007BDCD1 = {
 			isa = PBXGroup;
 			children = (
-				E8F00BFB2DB42B7A007BDCD1 /* Campfire */,
+				E8F00C0A2DB42BB2007BDCD1 /* Campfire */,
 				E8F00BFA2DB42B7A007BDCD1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +69,45 @@
 				E8F00BF92DB42B7A007BDCD1 /* Campfire.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E8F00C0A2DB42BB2007BDCD1 /* Campfire */ = {
+			isa = PBXGroup;
+			children = (
+				E8F00C132DB42D5E007BDCD1 /* Arvo */,
+				E8F00C382DB441A6007BDCD1 /* Components */,
+				E8F00C082DB42BB2007BDCD1 /* CampfireApp.swift */,
+				E8F00C2C2DB431AB007BDCD1 /* CFFont.swift */,
+				E8F00C092DB42BB2007BDCD1 /* ContentView.swift */,
+				E8F00C3A2DB441FE007BDCD1 /* OnboardingView.swift */,
+				E8F00C3C2DB447C0007BDCD1 /* View+Ext.swift */,
+				E8F00C072DB42BB2007BDCD1 /* Assets.xcassets */,
+				E8F00C1B2DB42E1C007BDCD1 /* Info.plist */,
+			);
+			path = Campfire;
+			sourceTree = "<group>";
+		};
+		E8F00C132DB42D5E007BDCD1 /* Arvo */ = {
+			isa = PBXGroup;
+			children = (
+				E8F00C0E2DB42D5E007BDCD1 /* Arvo-Bold.ttf */,
+				E8F00C0F2DB42D5E007BDCD1 /* Arvo-BoldItalic.ttf */,
+				E8F00C102DB42D5E007BDCD1 /* Arvo-Italic.ttf */,
+				E8F00C112DB42D5E007BDCD1 /* Arvo-Regular.ttf */,
+				E8F00C122DB42D5E007BDCD1 /* OFL.txt */,
+			);
+			path = Arvo;
+			sourceTree = "<group>";
+		};
+		E8F00C382DB441A6007BDCD1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E8F00C322DB43F4F007BDCD1 /* CFActionButton.swift */,
+				E8F00C2E2DB43DAC007BDCD1 /* DepthButtonStyle.swift */,
+				E8F00C372DB441A6007BDCD1 /* HeaderTitleTextFieldView.swift */,
+				E8F00C3E2DB44F05007BDCD1 /* CFPickerView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +124,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				E8F00BFB2DB42B7A007BDCD1 /* Campfire */,
 			);
 			name = Campfire;
 			packageProductDependencies = (
@@ -109,6 +171,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8F00C0D2DB42BB2007BDCD1 /* Assets.xcassets in Resources */,
+				E8F00C142DB42D5E007BDCD1 /* OFL.txt in Resources */,
+				E8F00C152DB42D5E007BDCD1 /* Arvo-Bold.ttf in Resources */,
+				E8F00C162DB42D5E007BDCD1 /* Arvo-Regular.ttf in Resources */,
+				E8F00C172DB42D5E007BDCD1 /* Arvo-BoldItalic.ttf in Resources */,
+				E8F00C182DB42D5E007BDCD1 /* Arvo-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +187,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8F00C3D2DB447C0007BDCD1 /* View+Ext.swift in Sources */,
+				E8F00C0B2DB42BB2007BDCD1 /* CampfireApp.swift in Sources */,
+				E8F00C332DB43F4F007BDCD1 /* CFActionButton.swift in Sources */,
+				E8F00C3F2DB44F05007BDCD1 /* CFPickerView.swift in Sources */,
+				E8F00C0C2DB42BB2007BDCD1 /* ContentView.swift in Sources */,
+				E8F00C2D2DB431AB007BDCD1 /* CFFont.swift in Sources */,
+				E8F00C392DB441A6007BDCD1 /* HeaderTitleTextFieldView.swift in Sources */,
+				E8F00C2F2DB43DAC007BDCD1 /* DepthButtonStyle.swift in Sources */,
+				E8F00C3B2DB441FE007BDCD1 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +333,7 @@
 				DEVELOPMENT_TEAM = 2XN7A3Y7GG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Campfire/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -284,6 +362,7 @@
 				DEVELOPMENT_TEAM = 2XN7A3Y7GG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Campfire/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
