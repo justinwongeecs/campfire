@@ -22,6 +22,9 @@
 		E8F00C3B2DB441FE007BDCD1 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F00C3A2DB441FE007BDCD1 /* OnboardingView.swift */; };
 		E8F00C3D2DB447C0007BDCD1 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F00C3C2DB447C0007BDCD1 /* View+Ext.swift */; };
 		E8F00C3F2DB44F05007BDCD1 /* CFPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F00C3E2DB44F05007BDCD1 /* CFPickerView.swift */; };
+		E8F00C412DB4631E007BDCD1 /* CatchupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F00C402DB4631E007BDCD1 /* CatchupView.swift */; };
+		E8F00C432DB46576007BDCD1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F00C422DB46576007BDCD1 /* Models.swift */; };
+		E8F00C452DB46693007BDCD1 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F00C442DB46693007BDCD1 /* Color+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		E8F00C3A2DB441FE007BDCD1 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		E8F00C3C2DB447C0007BDCD1 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		E8F00C3E2DB44F05007BDCD1 /* CFPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFPickerView.swift; sourceTree = "<group>"; };
+		E8F00C402DB4631E007BDCD1 /* CatchupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchupView.swift; sourceTree = "<group>"; };
+		E8F00C422DB46576007BDCD1 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		E8F00C442DB46693007BDCD1 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +82,13 @@
 			children = (
 				E8F00C132DB42D5E007BDCD1 /* Arvo */,
 				E8F00C382DB441A6007BDCD1 /* Components */,
+				E8F00C422DB46576007BDCD1 /* Models.swift */,
 				E8F00C082DB42BB2007BDCD1 /* CampfireApp.swift */,
 				E8F00C2C2DB431AB007BDCD1 /* CFFont.swift */,
 				E8F00C092DB42BB2007BDCD1 /* ContentView.swift */,
 				E8F00C3A2DB441FE007BDCD1 /* OnboardingView.swift */,
+				E8F00C402DB4631E007BDCD1 /* CatchupView.swift */,
+				E8F00C442DB46693007BDCD1 /* Color+Ext.swift */,
 				E8F00C3C2DB447C0007BDCD1 /* View+Ext.swift */,
 				E8F00C072DB42BB2007BDCD1 /* Assets.xcassets */,
 				E8F00C1B2DB42E1C007BDCD1 /* Info.plist */,
@@ -187,6 +196,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8F00C432DB46576007BDCD1 /* Models.swift in Sources */,
+				E8F00C452DB46693007BDCD1 /* Color+Ext.swift in Sources */,
 				E8F00C3D2DB447C0007BDCD1 /* View+Ext.swift in Sources */,
 				E8F00C0B2DB42BB2007BDCD1 /* CampfireApp.swift in Sources */,
 				E8F00C332DB43F4F007BDCD1 /* CFActionButton.swift in Sources */,
@@ -196,6 +207,7 @@
 				E8F00C392DB441A6007BDCD1 /* HeaderTitleTextFieldView.swift in Sources */,
 				E8F00C2F2DB43DAC007BDCD1 /* DepthButtonStyle.swift in Sources */,
 				E8F00C3B2DB441FE007BDCD1 /* OnboardingView.swift in Sources */,
+				E8F00C412DB4631E007BDCD1 /* CatchupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
