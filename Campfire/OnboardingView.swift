@@ -8,22 +8,49 @@
 import SwiftUI
 
 struct OnboardingCauroselView: View {
-    @State private var selection: Int = 0
+    var questions: [String]
+    
+    @Binding var selection: Int
+    
     var body: some View {
         TabView(selection: $selection) {
-            OnboardingView(question: "What is your favorite event that happened in the past year?", selection: $selection)
-            OnboardingView(question: "How are you feeling today?", selection: $selection)
+            NameEntryView()
+            ForEach(Array(questions.enumerated()), id: \.offset) { idx, question in
+                OnboardingView(question: question, selection: $selection)
+                    .tag(idx)
+            }
         }
-        .tabViewStyle(.page)
         .ignoresSafeArea()
     }
 }
 
+struct NameEntryView: View {
+    @Environment(CampfireViewModel.self) private var viewModel
+    @State private var nameText = ""
+    
+    var body: some View {
+        ZStack {
+            FireMeshGradientView()
+            
+            HeaderTitleTextFieldView(title: "Name:", text: $nameText)
+            
+            HStack {
+                Spacer()
+                CFOnboardingNextButton {
+                    viewModel.setUsername(withName: nameText)
+                }
+            }
+            .padding()
+        }
+    }
+}
 
 
 // MARK: - OnboardingView
 
 struct OnboardingView: View {
+    @Environment(CampfireViewModel.self) private var viewModel
+    
     var question: String
     @Binding var selection: Int
     
@@ -77,26 +104,18 @@ struct OnboardingView: View {
     }
     
     private var nextButton: some View {
-        Button(action: {
-            
-        }) {
-            Circle()
-                .fill(.regularMaterial)
-                .frame(width: 60, height: 60)
-                .overlay(
-                    Image(systemName: "arrow.right")
-                        .font(.system(size: 30))
-                        .bold()
-                        .foregroundStyle(.orange)
-                )
-                .compositingGroup()
-                .shadow(color: .orange, radius: 10)
+        CFOnboardingNextButton {
+            Task {
+                await viewModel.addUserFact(userFactNum: selection, forQuestion: question, withAnswer: answerText)
+                selection += 1
+            }
         }
     }
 }
 
 #Preview("OnboardingCauroselView"){
-    OnboardingCauroselView()
+    @Previewable @State var selection: Int = 0
+    OnboardingCauroselView(questions: ["How are you doing?"], selection: $selection)
 }
 
 #Preview {

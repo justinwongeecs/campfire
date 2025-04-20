@@ -7,36 +7,109 @@
 
 import UIKit
 
-struct CFUserKeyFacts {
+struct CFUserKeyFact: Codable {
+    var id: Int
+    var createdAt: String
+    var updatedAt: String
+    var userID: Int
     var question: String
     var answer: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case userID = "user_id"
+        case question
+        case answer
+   }
 }
 
-struct CFUser {
-    var id: UUID
-    var name: String
-    var profileImage: UIImage
+struct CFUser: Codable {
+    var id: Int
+    var name: String?
     var phoneNumber: String
-    var keyFacts: [CFUserKeyFacts]
-    var catchUps: [CFCatchUp]
+    var createdAt: String
+    var updatedAt: String
+    var onboarded: Bool
+    var keyFacts: [CFUserKeyFact]
+    var catchUp: CFCatchUp?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case phoneNumber = "phone_number"
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case onboarded
+        case keyFacts = "facts"
+        case catchUp = "catchup"
+   }
 }
 
-struct CFCatchUpMessage: Identifiable {
-    let id = UUID()
-    var senderID: UUID
-    var timestamp: Date
-    var message: String
+struct CFCatchUpMessage: Codable {
+    var id: Int
+    var text: String
+    var userID: Int
+    var catchupID: Int
+    var createdAt: String
+    var updatedAt: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case text = "content"
+        case userID = "user_id"
+        case catchupID = "catchup_id"
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+    }
 }
 
-struct CFCatchUp {
-    var id = UUID()
-    static let sample = CFCatchUp(userIDs: [], prompt: "What was the most memorable event in the past couple weeks?", messages: [CFCatchUpMessage(senderID: UUID(), timestamp: Date(), message: "How are you doing?"), CFCatchUpMessage(senderID: UUID(), timestamp: Date(), message: "That's awesome! That's so good to see you! Hope you are doing well as well.")])
-    var userIDs: [UUID]
+struct CFCatchUpUser: Codable {
+    var id: Int
+    var name: String?
+    var phoneNumber: String
+    var createdAt: String
+    var updatedAt: String
+    var onboarded: Bool
+    var keyFacts: [CFUserKeyFact]
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case phoneNumber = "phone_number"
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case onboarded
+        case keyFacts = "facts"
+   }
+}
+
+struct CFCatchUp: Codable {
+    var id: Int
+    var contactID: Int
     var prompt: String
-    var messages: [CFCatchUpMessage]
+    var date: String
+    var createdAt: String
+    var updatedAt: String
+    var otherUser: CFCatchUpUser
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case contactID = "contact_id"
+        case prompt
+        case date
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case otherUser = "with"
+    }
 }
 
 enum CFMessageDirection {
     case left
     case right
+}
+
+enum CFError: String, Error {
+    case notAuthorizedContacts = "Request to access contacts was not authorized. Core functionality of Campfire will not be available."
 }

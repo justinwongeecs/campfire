@@ -8,9 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var viewModel = CampfireViewModel()
+    @State private var onboardingCauroselSelection = 0
     @State private var phoneNumberText = ""
+    @State private var shortCodeText = ""
+    
+    private let questions = [
+        "What is your favorite event that happened in the past year?",
+        "Where are you currently situated?",
+        "What do you spend the most of your day doing?"
+    ]
     
     var body: some View {
+        if viewModel.currentUser == nil {
+            loginView
+        } else if !viewModel.currentUser!.onboarded && onboardingCauroselSelection <= questions.count {
+            OnboardingCauroselView(questions: questions, selection: $onboardingCauroselSelection)
+                .environment(viewModel)
+        } else {
+            CatchupContactsContainerView()
+                .onAppear {
+                    viewModel.fetchUserContacts()
+                }
+                .environment(viewModel)
+        }
+    }
+    
+    private var loginView: some View {
         ZStack {
             FireMeshGradientView()
             
@@ -24,12 +48,22 @@ struct ContentView: View {
                 Spacer()
                 HeaderTitleTextFieldView(title: "Phone Number:", text: $phoneNumberText)
                 Spacer()
-                CFActionButton(title: "Let's Huddle!", colors: (.yellow, .red))
+                CFActionButton(title: "Let's Huddle!", colors: (.yellow, .red)) {
+                    viewModel.loginUser(withPhoneNumber: phoneNumberText)
+                }
                 Spacer()
             }
             .padding()
             .font(CFFont.bold(40))
         }
+        .alert("Enter Code", isPresented: $viewModel.shouldShowShortCodeView) {
+           TextField("Code", text: $shortCodeText)
+            Button("OK", action: {
+                viewModel.authenticateUser(withShortCode: shortCodeText)
+            })
+       } message: {
+           Text("Code should have been sent via a text message.")
+       }
     }
 }
 
