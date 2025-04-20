@@ -31,7 +31,7 @@ struct OnboardingView: View {
     
     var body: some View {
         ZStack {
-            Color.orange.opacity(0.2)
+            Color.orangeBackground
                 .ignoresSafeArea()
             
             VStack {
