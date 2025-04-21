@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HeaderTitleTextFieldView: View {
     var title: String
+    var placeholder: String = ""
     @Binding var text: String
     
     private let cornerRadius: CGFloat = 10
@@ -18,7 +19,7 @@ struct HeaderTitleTextFieldView: View {
         VStack(alignment: .leading) {
             Text(title)
                 .font(CFFont.bold(18))
-            TextField("Enter a phone number", text: $text)
+            TextField(placeholder, text: $text)
                 .font(CFFont.italic(16))
                 .padding(10)
                 .background(.regularMaterial)

@@ -115,6 +115,17 @@ class CampfireViewModel {
         }
     }
     
+    func getUser() {
+        guard let authToken else {
+            print("UserID or authToken is nil :(")
+            return
+        }
+        
+        Task {
+            currentUser = await DataManager.shared.fetchUser(token: authToken)
+        }
+    }
+    
     
     // MARK: - Contacts
     
@@ -165,6 +176,10 @@ class CampfireViewModel {
     private func getNumOfStreaks(sortedDates: [Date]) -> Int {
         let calendar = Calendar.current
         let uniqueDays = Array(Set(sortedDates.map { calendar.startOfDay(for: $0) })).sorted(by: >)
+        
+        guard uniqueDays.count >= 1 else {
+            return 0
+        }
 
         var streak = 1
         for i in 1..<uniqueDays.count {

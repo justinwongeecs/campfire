@@ -31,11 +31,15 @@ struct CFPlaceholderImageView: View {
             .frame(width: widthHeight, height: widthHeight)
             .overlay(
                 HStack(spacing: 0) {
-                    if !firstName.isEmpty {
-                        Text(String(firstName.first ?? " "))
-                    }
-                    if !lastName.isEmpty {
-                        Text(String(lastName.first ?? " "))
+                    if firstName.isEmpty && lastName.isEmpty {
+                        Text("😊")
+                    } else {
+                        if !firstName.isEmpty {
+                            Text(String(firstName.first ?? " "))
+                        }
+                        if !lastName.isEmpty {
+                            Text(String(lastName.first ?? " "))
+                        }
                     }
                 }
                 .foregroundStyle(.white)

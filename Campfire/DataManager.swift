@@ -108,6 +108,23 @@ class DataManager {
         }
     }
     
+    func fetchUser(token: String) async -> CFUser? {
+        guard let url = URL(string: "\(serverEndpoint)/users/current/") else {
+            return nil
+        }
+        
+        let request = createURLRequestWithBearerToken(with: url, httpMethod: "GET", token: token)
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(for: request)
+            let user = try JSONDecoder().decode(CFUser.self, from: data)
+            return user
+        } catch {
+            print("fetchUser error: \(error)")
+            return nil
+        }
+    }
+    
     
     // MARK: - Contacts
     

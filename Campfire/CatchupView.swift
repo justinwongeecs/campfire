@@ -41,9 +41,6 @@ struct CatchupContactsContainerView: View {
         }
         .onAppear {
             viewModel.fetchChatupMessages()
-            viewModel.currentUser?.catchUp?.otherUser.keyFacts = [
-                CFUserKeyFact(id: 0, createdAt: "", updatedAt: "", userID: 0, question: "How are you doing?", answer: "I'm doing great. Thanks for asking!")
-            ]
         }
     }
     
@@ -98,12 +95,14 @@ struct CatchupView: View {
     var catchup: CFCatchUp?
     
     @State private var messageText = ""
+    @State private var refreshButtonPressed = false
     @Binding var showKeyFactsView: Bool
     
     var body: some View {
         ZStack {
             ScrollView(.vertical) {
                 VStack(spacing: 10) {
+                    refreshHeaderView
                     Text("My Catchup")
                         .font(CFFont.regular(30))
                     
@@ -137,7 +136,11 @@ struct CatchupView: View {
                             }
                         }
                     } else {
-                        CFEmptyView(message: "No Catchups Available For Today")
+                        VStack {
+                            Spacer()
+                            CFEmptyView(message: "No Catchups Available For Today")
+                            Spacer()
+                        }
                     }
                 }
                 .padding(.bottom, 100)
@@ -151,6 +154,25 @@ struct CatchupView: View {
                     .background(.regularMaterial)
             }
         }
+    }
+    
+    private var refreshHeaderView: some View {
+        HStack {
+            Spacer()
+            Button(action: {
+                withAnimation {
+                    refreshButtonPressed.toggle()
+                    viewModel.fetchChatupMessages()
+                }
+            }) {
+                Image(systemName: "arrow.clockwise")
+                    .foregroundStyle(.orange)
+                    .font(.system(size: 25))
+                    .bold()
+                    .symbolEffect(.rotate, value: refreshButtonPressed)
+            }
+        }
+        .padding(.trailing, 30)
     }
     
     @ViewBuilder

@@ -32,15 +32,21 @@ struct NameEntryView: View {
         ZStack {
             FireMeshGradientView()
             
-            HeaderTitleTextFieldView(title: "Name:", text: $nameText)
-            
-            HStack {
+            VStack {
                 Spacer()
-                CFOnboardingNextButton {
-                    viewModel.setUsername(withName: nameText)
+                
+                HeaderTitleTextFieldView(title: "Name:", placeholder: "Johnny Appleseed", text: $nameText)
+                
+                Spacer()
+                
+                HStack {
+                    Spacer()
+                    CFOnboardingNextButton {
+                        viewModel.setUsername(withName: nameText)
+                    }
                 }
+                .padding()
             }
-            .padding()
         }
     }
 }
